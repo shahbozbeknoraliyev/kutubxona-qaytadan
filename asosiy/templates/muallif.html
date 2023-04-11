@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<hr>
+<hr>
+<br>
+<br>
+<br>
+<form method="get">
+    <input type="text" name="qidirish" placeholder="ismni kiriting">
+    <button type="submit">Qidirish</button>
+</form>
+<br>
+<br>
+<br>
+{%for i in muallif%}
+<h1><a href="/muallif_edit/{{i.id}}">{{i.id}}:</a>    <a href="/bitta_muallif/{{i.id}}">{{i.ism}}</a></h1>
+<a href="/muallif_ochir/{{i.id}}"><button>ochirish</button></a>
+{%endfor%}
+
+<br>
+<br>
+<hr>
+<hr>
+<br>
+<br>
+<br>
+<form action="/muallif/" method="POST">{%csrf_token%}
+    <input type="text" name="i" placeholder="ismni kiriting">
+    <select name="j">
+        <option>erkak</option>
+        <option>ayol</option>
+    </select>
+    <select name="t">
+        <option>ha</option>
+        <option>yoq</option>
+
+    </select>
+    <input type="number" name="k_s" placeholder="kitob soni">
+    <input type="date" name="t_s" placeholder="tugulgan sana">
+
+<button type="submit">qoshish</button>
+
+</form>
+</body>
+</html>

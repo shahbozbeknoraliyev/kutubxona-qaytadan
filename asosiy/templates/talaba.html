@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br>
+<form method="GET">{%csrf_token%}
+    <input type="text" name="qidirish" placeholder="ismni kiriting">
+    <button type="submit">qidirish</button>
+
+</form>
+<br>
+<br>
+<br>
+{%for i in talaba%}
+<h1>  <a href="/talaba_edit/{{i.id}}">{{i.id}}</a>: <a href="/bitta_talaba/{{i.id}}" >{{i.ism}}</a></h1>
+{%endfor%}
+<br>
+<br>
+<br>
+<br>
+<form action="/talaba/" method="POST">{%csrf_token%}
+    <input type="text" name="i" placeholder="ismni kirit">
+    <select name="b">
+        <option>ha</option>
+        <option>yoq</option>
+
+    </select>
+    <input type="text" name="k_s" placeholder="kitoblar_soni">
+    <input type="text" name="k" placeholder="kurs">
+    <button type="submit">qoshish</button>
+
+</form>
+</body>
+</html>

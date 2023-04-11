@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br>
+<br>
+<hr>
+<hr>
+<br>
+<br>
+<br>
+<form method="POST">{%csrf_token%}
+    <label>talaba</label>
+    <select name="t">
+        {%for i in talaba%}
+        <option value="{{i.id}}">{{i.ism}}</option>
+        {%endfor%}
+
+    </select>
+    <label>kitob</label>
+    <select name="k">
+        {%for i in kitob%}
+        <option value="{{i.id}}">{{i.nom}}</option>
+        {%endfor%}
+
+    </select>
+    <label>admin</label>
+    <select name="a">
+        {%for i in admin%}
+        <option value="{{i.id}}">
+            {{i.ism}}
+        </option>
+        {%endfor%}
+    </select>
+    <label>olingan sana</label>
+    <input type="date" name="o_s" value="{{record.olingan_sana}}">
+    <label>qaytarish sanasi</label>
+    <input type="date" name="q_s" value="{{record.qaytarish_sanasi}}">
+    <label>qaytardi</label>
+    <select name="q">
+        <option>ha</option>
+        <option>yoq</option>
+    </select>
+    <button type="submit">saqlash</button>
+</form>
+<br>
+<br>
+<br>
+<center><a href="/recordlar/"><button>orqaga</button></a></center>
+
+
+</body>
+</html>

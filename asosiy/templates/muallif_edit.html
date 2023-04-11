@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST">{%csrf_token%}
+    <label>ismi</label>
+    <input type="text" name="i" value="{{muallif.ism}}">
+    <select name="j">
+        <option>erkak</option>
+        <option>ayol</option>
+
+    </select>
+    <select name="t">
+        <option>ha</option>
+        <option>yoq</option>
+    </select>
+    <label>kitob soni</label>
+    <input type="number" name="k_s" value="{{muallif.kitob_soni}}">
+    <label>tugulgan _sana</label>
+    <input type="date" name="t_s" value="{{muallif.tugulgan_sana}}">
+    <button type="submit">saqlash</button>
+
+</form>
+
+</body>
+</html>

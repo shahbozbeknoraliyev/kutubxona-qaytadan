@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br>
+<br>
+<br>
+<form method="get">
+    <input type="text" name="qidirish" placeholder="kiriting">
+    <button type="submit">Qidirish</button>
+
+</form>
+<br>
+{%for i in record%}
+<h1><a href="/record_edit/{{i.id}}">{{i.id}}:</a> <a href="/bitta_record/{{i.id}}"> {{i.talaba}}</a></h1>
+{%endfor%}
+
+
+<hr>
+<hr>
+<br>
+<br>
+<br>
+<form action="/record/" method="POST">{%csrf_token%}
+    <select name="t">
+        {%for i in talaba%}
+        <option value="{{i.id}}">{{i.ism}}</option>
+        {%endfor%}
+    </select>
+    <select name="k">
+        {%for i in kitob%}
+        <option value="{{i.id}}">{{i.nom}}</option>
+        {%endfor%}
+    </select>
+    <select name="a">
+        {%for i in admin%}
+        <option value="{{i.id}}">{{i.ism}}</option>
+        {%endfor%}
+    </select>
+    <input type="date" name="o_s" placeholder="olingan sana">
+    <input type="date" name="q_s" placeholder="qaytarish sanasi">
+    <select name="q">
+        <option>ha</option>
+        <option>yoq</option>
+    </select>
+    <button type="submit">Qoshish</button>
+</form>
+</body>
+</html>

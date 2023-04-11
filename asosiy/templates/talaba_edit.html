@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br>
+<br>
+<br>
+<hr>
+<form method="POST">{%csrf_token%}
+    <label>ismi</label>
+    <input type="text" name="i" value="{{talaba.ism}}">
+    <label>bitiruvchi</label>
+    <select name="b">
+        <option>ha</option>
+        <option>yoq</option>
+
+    </select>
+    <label>kitoblar_soni</label>
+    <input type="number" name="k_s" value="{{talaba.kitoblar_soni}}">
+    <label>kursi</label>
+    <input type="number" name="k" value="{{talaba.kurs}}">
+    <button type="submit">saqlash</button>
+</form>
+<br>
+<br>
+<br>
+<center><a href="/talaba/"> <button>orqaga</button></a></center>
+
+</body>
+</html>

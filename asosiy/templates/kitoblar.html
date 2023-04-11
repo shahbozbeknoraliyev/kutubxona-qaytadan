@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<hr>
+<hr>
+<br>
+<br>
+<br>
+<form method="GET">{%csrf_token%}
+    <input  type="text" name="qidirish" placeholder="kitob nomini  kiriting">
+    <button type="submit">qidirish</button>
+
+</form>
+<br>
+<br>
+{%for i in kitob%}
+<h1><a href="/kitob_edit/{{i.id}}">{{i.id}}</a>: <a href="/bitta_kitob/{{i.id}}"> {{i.nom}}</a></h1>
+<button><a href="/kitob_ochir/{{i.id}}">Ochirish</a></button>
+{%endfor%}
+<br>
+<br>
+<br>
+<hr>
+<hr>
+<br>
+<br>
+<form action="/kitob/" method="POST">{%csrf_token%}
+    <input type="text" name="n" placeholder="nomni kirit">
+    <input type="number" name="s" placeholder="sahifani kirit">
+    <select name="m">
+        {%for i in muallif%}
+        <option value="{{i.id}}">{{i.ism}}</option>
+        {%endfor%}
+
+    </select>
+    <input type="text" name="j" placeholder="janrni kirit">
+    <button type="submit">Qoshish</button>
+</form>
+</body>
+</html>

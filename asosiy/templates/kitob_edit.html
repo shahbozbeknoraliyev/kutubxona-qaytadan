@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br>
+<br>
+<br>
+<br>
+<form method="POST">{%csrf_token%}
+    <label>nomi</label>
+    <input type="text" name="i" value="{{kitob.nom}}">
+    <label>sahifasi</label>
+    <input type="number" name="s" value="{{kitob.sahifa}}">
+    <select name="m">
+        {%for i in muallif%}
+        <option value="{{i.id}}">{{i.ism}}</option>
+        {%endfor%}
+
+    </select>
+    <label>janri</label>
+    <input type="text" name="j" value="{{kitob.janr}}">
+    <button type="submit">saqlash</button>
+
+</form>
+
+</body>
+</html>
